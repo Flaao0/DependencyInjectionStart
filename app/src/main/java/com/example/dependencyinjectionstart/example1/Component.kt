@@ -1,6 +1,6 @@
 package com.example.dependencyinjectionstart.example1
 
-class Composition {
+class Component {
 
     private fun getComputer(): Computer {
         val monitor = Monitor()
@@ -15,6 +15,6 @@ class Composition {
     }
 
     fun inject(activity: Activity) {
-        activity.computer = getComputer()
+//        activity.keyboard = Keyboard()
     }
 }
