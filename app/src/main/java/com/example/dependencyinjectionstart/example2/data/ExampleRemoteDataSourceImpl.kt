@@ -5,6 +5,6 @@ class ExampleRemoteDataSourceImpl(
 ) : ExampleRemoteDataSource {
 
     override fun method() {
-
+        apiService.method()
     }
 }
