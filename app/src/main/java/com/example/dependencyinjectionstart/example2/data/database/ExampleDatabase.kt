@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example2.data
+package com.example.dependencyinjectionstart.example2.data.database
 
 import android.util.Log
 
