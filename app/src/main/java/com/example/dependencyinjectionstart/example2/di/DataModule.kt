@@ -6,7 +6,6 @@ import com.example.dependencyinjectionstart.example2.data.network.ExampleRemoteD
 import com.example.dependencyinjectionstart.example2.data.network.ExampleRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 
 @Module
@@ -17,4 +16,5 @@ interface DataModule {
 
     @Binds
     fun bindRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+
 }

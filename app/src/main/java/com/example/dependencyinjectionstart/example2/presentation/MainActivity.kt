@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.dependencyinjectionstart.R
 import com.example.dependencyinjectionstart.example1.Activity
+import com.example.dependencyinjectionstart.example2.di.ContextModule
 import com.example.dependencyinjectionstart.example2.di.DaggerApplicationComponent
+import com.example.dependencyinjectionstart.example2.di.DataModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +15,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: ExampleViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        DaggerApplicationComponent.create().inject(this)
+        DaggerApplicationComponent.builder().contextModule(ContextModule(this)).build()
+            .inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.method()
