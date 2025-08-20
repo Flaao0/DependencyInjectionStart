@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dependencyinjectionstart.R
 import com.example.dependencyinjectionstart.example2.ExampleApp
 import javax.inject.Inject
+import kotlin.getValue
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         (application as ExampleApp).component
-            .activityComponentFactory().create("MY_ID")
+            .activityComponentFactory().create("MY_ID", "MY_NAME")
     }
 
 
